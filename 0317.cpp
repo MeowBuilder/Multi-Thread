@@ -11,6 +11,9 @@ using namespace std::chrono;
 volatile int sum;
 std::mutex mylock;
 
+//volatile bool flag[2] = { false,false };
+//volatile int victim = 0;
+
 std::atomic<bool> flag[2] = { false,false };
 std::atomic<int> victim = 0;
 
@@ -18,6 +21,7 @@ void p_lock(int thread_id) {
 	int other = 1 - thread_id;
 	flag[thread_id] = true;
 	victim = thread_id;
+	//atomic_thread_fence(std::memory_order_seq_cst);
 	while (flag[other] && victim == thread_id); // Cash thrashing
 }
 

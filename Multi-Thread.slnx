@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Multi-Thread.vcxproj" Id="1366be27-99a2-4620-965f-86767c0d469b" />
+</Solution>
